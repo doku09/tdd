@@ -1,5 +1,6 @@
-package etctest;
+package junit5.etctest;
 
+import junit5.Calculator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.RepetitionInfo;
@@ -20,7 +21,7 @@ public class RepeatedTestsTest {
 	@RepeatedTest(value = 5, name= "{displayName} - repetition {currentRepetition}/{totalRepetitions}")
 	@DisplayName("Test add operation")
 	void addNumber() {
-		Calcualtor calcualtor = new Calcualtor();
+		Calculator calcualtor = new Calculator();
 		assertEquals(2, calcualtor.add(1,1), "1 + 1 should equal 2");
 	}
 
@@ -37,11 +38,3 @@ public class RepeatedTestsTest {
 	}
 }
 
-class Calcualtor {
-	int a;
-	int b;
-
-	public int add(int a,int b) {
-		return a + b;
-	}
-}
